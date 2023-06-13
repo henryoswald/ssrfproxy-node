@@ -1,3 +1,7 @@
+## Overview
+
+Node package for protecting your server from Server Side Request Forgery (SSRF) attacks using [SSRF Proxy](https://ssrfproxy.com). Sign up for a free account to get an API key.
+
 ## Install
 
 ```

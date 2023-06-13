@@ -1,7 +1,7 @@
 const { SsrfProxyApi, Configuration } = require("./dist/index");
 
 const apiInstance = new SsrfProxyApi({
-  apiKey: "ssrf_pB4Xh2Lm_q43tCBiI2iDeGHhBiByEUzF6",
+  apiKey: process.env.ssrf_api_key,
 });
 
 // const apiInstance = new SsrfProxyApi({
