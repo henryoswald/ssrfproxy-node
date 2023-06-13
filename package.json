@@ -1,6 +1,6 @@
 {
   "name": "@ssrfproxy/ssrfproxy-node",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "nodejs package for proxying http requires to avoid (ssrf) server side request forgery attacks ",
   "author": "ssrfproxy",
   "keywords": [
