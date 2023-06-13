@@ -1,13 +1,10 @@
 {
-  "name": "ssrfproxy",
+  "name": "@ssrfproxy/ssrfproxy-node",
   "version": "1.0.0",
-  "description": "OpenAPI client for ssrfproxy",
-  "author": "OpenAPI-Generator Contributors",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/GIT_USER_ID/GIT_REPO_ID.git"
-  },
+  "description": "nodejs package for proxying http requires to avoid (ssrf) server side request forgery attacks ",
+  "author": "ssrfproxy",
   "keywords": [
+    "ssrf",
     "axios",
     "typescript",
     "openapi-client",
@@ -19,7 +16,8 @@
   "typings": "./dist/index.d.ts",
   "scripts": {
     "build": "tsc ",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "publish": "npm run build && npm publish --access public"
   },
   "dependencies": {
     "axios": "^0.27.2"

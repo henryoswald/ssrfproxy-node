@@ -1,45 +1,35 @@
-## ssrfproxy@1.0.0
-
-This generator creates TypeScript/JavaScript client that utilizes [axios](https://github.com/axios/axios). The generated Node module can be used in the following environments:
-
-Environment
-* Node.js
-* Webpack
-* Browserify
-
-Language level
-* ES5 - you must have a Promises/A+ library installed
-* ES6
-
-Module system
-* CommonJS
-* ES6 module system
-
-It can be used in both TypeScript and JavaScript. In TypeScript, the definition should be automatically resolved via `package.json`. ([Reference](http://www.typescriptlang.org/docs/handbook/typings-for-npm-packages.html))
-
-### Building
-
-To build and compile the typescript sources to javascript use:
-```
-npm install
-npm run build
-```
-
-### Publishing
-
-First build the package then run ```npm publish```
-
-### Consuming
-
-navigate to the folder of your consuming project and run one of the following commands.
-
-_published:_
+## Install
 
 ```
-npm install ssrfproxy@1.0.0 --save
+npm i @ssrfproxy/ssrfproxy-node --save
 ```
 
-_unPublished (not recommended):_
+## Usage
 
 ```
-npm install PATH_TO_GENERATED_PACKAGE --save
+const { SsrfProxyApi } = require('@ssrfproxy/ssrfproxy-node');
+
+const ssrfproxy = new SsrfProxyApi({
+  apiKey: API_KEY_HERE,
+});
+
+const response = await apiInstance.proxy({
+  url: "https://dummyjson.com/products/1",
+});
+
+console.log(response.headers);
+console.log(response.data);
+```
+
+## Options
+
+| Option  | Type    | Description                                                                 | Example                                | Required |
+| ------- | ------- | --------------------------------------------------------------------------- | -------------------------------------- | -------- |
+| url     | string  | The URL to be accessed by the API.                                          | "http://example.com/"                  | Yes      |
+| method  | string  | The HTTP method to be used when accessing the URL. Defaults to "GET".       | "GET"                                  | No       |
+| headers | object  | The headers to be sent when accessing the URL.                              | { "Content-Type": "application/json" } | No       |
+| timeout | integer | The maximum time to wait for a response, in milliseconds. Defaults to 5000. | 5000                                   | No       |
+
+## Advanced Usage
+
+Under the hood ssrfproxy-node uses [axios](https://www.npmjs.com/package/axios#response-schema), so you can use any of the options that axios supports.
