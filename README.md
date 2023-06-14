@@ -17,7 +17,7 @@ const ssrfproxy = new SsrfProxyApi({
   apiKey: API_KEY_HERE,
 });
 
-const response = await apiInstance.proxy({
+const response = await ssrfproxy.proxy({
   url: "https://dummyjson.com/products/1",
 });
 
